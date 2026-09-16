@@ -232,17 +232,24 @@
   .sets-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:56px 28px; }
   @media (max-width:980px){ .sets-grid{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:640px){
-    .sets-grid{ grid-template-columns:repeat(2,1fr); gap:34px 12px; }
-    .photo-mat{ margin:16px 10px 0; padding:8px; }
-    .thumbs{ gap:4px; margin-top:5px; }
-    .gift-card .body{ padding:12px 12px 0; }
-    .gift-card h3{ font-size:0.98rem; }
-    .gift-card .blurb{ font-size:0.78rem; margin-bottom:10px; }
-    .gift-card summary{ font-size:0.76rem; }
-    .gift-card details p{ font-size:0.76rem; }
-    .tag{ min-width:0; padding:6px 10px 5px; }
-    .tag .price{ font-size:0.85rem; }
-    .tag .spec{ font-size:0.52rem; }
+    .sets-grid{ grid-template-columns:repeat(2,1fr); gap:22px 10px; }
+    .gift-card{ border-radius:12px; padding-bottom:8px; box-shadow:8px 9px 0 rgba(30,44,46,0.05); }
+    .tag-loop{ top:-20px; width:11px; height:11px; border-width:1.5px; }
+    .tag{
+      top:-11px; padding:4px 8px 3px; min-width:0;
+      border-top-width:2px; border-bottom-width:2px;
+      box-shadow:5px 6px 0 rgba(30,44,46,0.05);
+    }
+    .tag .price{ font-size:0.74rem; }
+    .tag .spec{ font-size:0.46rem; }
+    .photo-mat{ margin:11px 7px 0; padding:5px; border-radius:10px; }
+    .thumbs{ gap:3px; margin-top:4px; }
+    .gift-card .body{ padding:8px 8px 0; }
+    .gift-card h3{ font-size:0.88rem; margin-bottom:3px; }
+    .gift-card .blurb{ font-size:0.72rem; margin-bottom:7px; line-height:1.4; }
+    .gift-card details{ padding-top:7px; }
+    .gift-card summary{ font-size:0.68rem; }
+    .gift-card details p{ font-size:0.68rem; margin-top:6px; }
   }
 
   .gift-card{
