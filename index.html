@@ -47,28 +47,28 @@
     {
       "@type": "Product",
       "name": "Облачко",
-      "image": "https://chudoryadom.ru/images/oblachko.jpg",
+      "image": "https://chudoryadom.ru/images/oblachko-1.jpg",
       "description": "Мягкая игрушка-барашек с набором шоколадных конфет внутри, 22×22 см, 400 г.",
       "offers": { "@type": "Offer", "priceCurrency": "RUB", "price": "1500", "availability": "https://schema.org/InStock", "url": "https://chudoryadom.ru/#sets" }
     },
     {
       "@type": "Product",
       "name": "Подушка-Барашек",
-      "image": "https://chudoryadom.ru/images/podushka-barashek.jpg",
+      "image": "https://chudoryadom.ru/images/podushka-barashek-1.jpg",
       "description": "Мягкая игрушка-подушка барашек с набором шоколадных конфет внутри, 35×30 см, 500 г.",
       "offers": { "@type": "Offer", "priceCurrency": "RUB", "price": "1700", "availability": "https://schema.org/InStock", "url": "https://chudoryadom.ru/#sets" }
     },
     {
       "@type": "Product",
       "name": "Овечка на коньках",
-      "image": "https://chudoryadom.ru/images/ovechka-konki.jpg",
+      "image": "https://chudoryadom.ru/images/ovechka-konki-1.jpg",
       "description": "Мягкая игрушка-овечка с набором шоколадных конфет внутри, 30 см, 700 г.",
       "offers": { "@type": "Offer", "priceCurrency": "RUB", "price": "2000", "availability": "https://schema.org/InStock", "url": "https://chudoryadom.ru/#sets" }
     },
     {
       "@type": "Product",
       "name": "Барашек-Подушка Макси",
-      "image": "https://chudoryadom.ru/images/barash-maxi.jpg",
+      "image": "https://chudoryadom.ru/images/barash-maxi-1.jpg",
       "description": "Большая мягкая игрушка-подушка барашек с набором шоколадных конфет внутри, 35×30 см, 800 г.",
       "offers": { "@type": "Offer", "priceCurrency": "RUB", "price": "2200", "availability": "https://schema.org/InStock", "url": "https://chudoryadom.ru/#sets" }
     },
@@ -234,6 +234,7 @@
   @media (max-width:640px){
     .sets-grid{ grid-template-columns:repeat(2,1fr); gap:34px 12px; }
     .photo-mat{ margin:16px 10px 0; padding:8px; }
+    .thumbs{ gap:4px; margin-top:5px; }
     .gift-card .body{ padding:12px 12px 0; }
     .gift-card h3{ font-size:0.98rem; }
     .gift-card .blurb{ font-size:0.78rem; margin-bottom:10px; }
@@ -272,6 +273,15 @@
     padding:14px; overflow:hidden;
   }
   .photo-mat img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:8px; }
+  .thumbs{ display:flex; gap:6px; margin-top:8px; }
+  .thumb{
+    border:2px solid transparent; padding:0; background:none; cursor:pointer;
+    border-radius:6px; overflow:hidden; width:100%; aspect-ratio:1/1;
+    opacity:0.55; transition:opacity .15s ease, border-color .15s ease;
+  }
+  .thumb img{ width:100%; height:100%; object-fit:cover; display:block; border-radius:4px; }
+  .thumb:hover{ opacity:0.85; }
+  .thumb.active{ opacity:1; border-color:var(--accent); }
 
   .gift-card .body{ padding:18px 22px 0; }
   .gift-card h3{ font-size:1.2rem; margin-bottom:6px; }
@@ -425,7 +435,7 @@
           <path d="M12 2v20M4 7l16 10M20 7L4 17" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round"/>
         </svg>
         <div class="blob">
-          <img src="images/oblachko.jpg" alt="Мягкая игрушка-барашек «Облачко», белая, с песочными рогами">
+          <img src="images/oblachko-1.jpg" alt="Мягкая игрушка-барашек «Облачко», белая, с песочными рогами">
         </div>
         <span class="badge"><span class="name">Облачко</span><span class="price">1 500 ₽</span></span>
       </div>
@@ -460,7 +470,13 @@
       <article class="gift-card">
         <span class="tag-loop"></span>
         <span class="tag"><span class="price">1 500 ₽</span><span class="spec">22×22 см · 400 г</span></span>
-        <div class="photo-mat"><img src="images/oblachko.jpg" alt="Мягкая игрушка-барашек «Облачко», белая, с песочными рогами"></div>
+        <div class="photo-mat">
+          <img class="main-photo" src="images/oblachko-1.jpg" alt="Мягкая игрушка-барашек «Облачко», белая, с песочными рогами">
+          <div class="thumbs">
+            <button class="thumb active" data-src="images/oblachko-1.jpg" data-alt="Мягкая игрушка-барашек «Облачко», белая, с песочными рогами, вид спереди"><img src="images/oblachko-1.jpg" alt=""></button>
+            <button class="thumb" data-src="images/oblachko-2.jpg" data-alt="Мягкая игрушка-барашек «Облачко», крупный план мордочки"><img src="images/oblachko-2.jpg" alt=""></button>
+          </div>
+        </div>
         <div class="body">
           <h3>Облачко</h3>
           <p class="blurb">Самый компактный барашек линейки — кругленький, воздушный и совершенно белый, будто и правда скатан из зимнего облака. Идеальный формат для одного тёплого «спасибо» — коллеге, воспитателю или соседке по лестничной клетке.</p>
@@ -474,7 +490,13 @@
       <article class="gift-card">
         <span class="tag-loop"></span>
         <span class="tag"><span class="price">1 700 ₽</span><span class="spec">35×30 см · 500 г</span></span>
-        <div class="photo-mat"><img src="images/podushka-barashek.jpg" alt="Мягкая игрушка-подушка в форме барашка, бежевая с коричневыми рогами"></div>
+        <div class="photo-mat">
+          <img class="main-photo" src="images/podushka-barashek-1.jpg" alt="Мягкая игрушка-подушка в форме барашка, бежевая с коричневыми рогами">
+          <div class="thumbs">
+            <button class="thumb active" data-src="images/podushka-barashek-1.jpg" data-alt="Мягкая игрушка-подушка в форме барашка, вид сложенной подушки"><img src="images/podushka-barashek-1.jpg" alt=""></button>
+            <button class="thumb" data-src="images/podushka-barashek-2.jpg" data-alt="Мягкая игрушка-подушка барашек, вид сбоку"><img src="images/podushka-barashek-2.jpg" alt=""></button>
+          </div>
+        </div>
         <div class="body">
           <h3>Подушка-Барашек</h3>
           <p class="blurb">Тот же добродушный барашек, только свернувшийся клубочком в форму подушки. Конфеты разойдутся к чаю за пару вечеров, а он останется дремать на диване или ехать с вами в машине как маленький талисман.</p>
@@ -488,7 +510,13 @@
       <article class="gift-card">
         <span class="tag-loop"></span>
         <span class="tag"><span class="price">2 000 ₽</span><span class="spec">30 см · 700 г</span></span>
-        <div class="photo-mat"><img src="images/ovechka-konki.jpg" alt="Мягкая игрушка-овечка в белом наряде и с серебристыми «коньками»"></div>
+        <div class="photo-mat">
+          <img class="main-photo" src="images/ovechka-konki-1.jpg" alt="Мягкая игрушка-овечка в белом наряде и с серебристыми «коньками»">
+          <div class="thumbs">
+            <button class="thumb active" data-src="images/ovechka-konki-1.jpg" data-alt="Мягкая игрушка-овечка в белом наряде, общий план"><img src="images/ovechka-konki-1.jpg" alt=""></button>
+            <button class="thumb" data-src="images/ovechka-konki-2.jpg" data-alt="Мягкая игрушка-овечка, крупный план мордочки"><img src="images/ovechka-konki-2.jpg" alt=""></button>
+          </div>
+        </div>
         <div class="body">
           <h3>Овечка на коньках</h3>
           <p class="blurb">Овечка в собственном платье и с блестящими «коньками» у ножек — самая нарядная из линейки, будто уже собралась встречать бой курантов. И заметно крупнее «Облачка».</p>
@@ -502,7 +530,13 @@
       <article class="gift-card">
         <span class="tag-loop"></span>
         <span class="tag"><span class="price">2 200 ₽</span><span class="spec">35×30 см · 800 г</span></span>
-        <div class="photo-mat"><img src="images/barash-maxi.jpg" alt="Большая мягкая игрушка-подушка барашек Макси, кремово-коричневая"></div>
+        <div class="photo-mat">
+          <img class="main-photo" src="images/barash-maxi-1.jpg" alt="Большая мягкая игрушка-подушка барашек Макси, кремово-коричневая">
+          <div class="thumbs">
+            <button class="thumb active" data-src="images/barash-maxi-1.jpg" data-alt="Большая мягкая игрушка-подушка барашек Макси, сидя"><img src="images/barash-maxi-1.jpg" alt=""></button>
+            <button class="thumb" data-src="images/barash-maxi-2.jpg" data-alt="Большая мягкая игрушка-подушка барашек Макси, вид сбоку"><img src="images/barash-maxi-2.jpg" alt=""></button>
+          </div>
+        </div>
         <div class="body">
           <h3>Барашек-Подушка Макси</h3>
           <p class="blurb">Увеличенная версия любимой «Подушки-Барашка»: почти 800 граммов сладкого внутри и вдвое больше объятий снаружи — хватит и на щедрый подарок, и на уютный вечер под пледом.</p>
@@ -698,6 +732,24 @@
     resize(); seed(); draw();
     window.addEventListener('resize', function(){ resize(); seed(); draw(); });
     if(!reduce){ requestAnimationFrame(step); }
+  })();
+</script>
+
+<script>
+  (function(){
+    document.querySelectorAll('.photo-mat').forEach(function(mat){
+      var main = mat.querySelector('.main-photo');
+      var thumbs = mat.querySelectorAll('.thumb');
+      if(!main || !thumbs.length) return;
+      thumbs.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          main.setAttribute('src', btn.getAttribute('data-src'));
+          main.setAttribute('alt', btn.getAttribute('data-alt') || main.getAttribute('alt'));
+          thumbs.forEach(function(b){ b.classList.remove('active'); });
+          btn.classList.add('active');
+        });
+      });
+    });
   })();
 </script>
 </body>
