@@ -233,7 +233,10 @@
 
   /* ---------- product cards ---------- */
   .sets-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:56px 28px; }
-  @media (max-width:980px){ .sets-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:980px){
+    .sets-grid{ grid-template-columns:repeat(2,1fr); }
+    .gift-card:last-child{ grid-column:1 / -1; }
+  }
 
   .gift-card{
     position:relative; background:var(--surface); border:1px solid var(--line);
